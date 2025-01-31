@@ -1,6 +1,6 @@
 {
     "company": "André Guergolet Inc.",
     "repository" : "endereco de um repositorio",
-    "redis-address": "",
-    "data-timeout": ""
+    "redis-address": "localhost:4999",
+    "data-timeout": 30
 }

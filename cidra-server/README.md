@@ -67,6 +67,7 @@ REDIS_PORT=6379
 DATA_TIMEOUT=30
 GIT_SSH_PRIVATE_KEY=your_ssh_key
 GIT_KNOWN_HOSTS=your_known_hosts
+CODE_FOLDER=code_sample
 ```
 
 ## 🔧 How It Works
@@ -103,3 +104,8 @@ This ensures Redis is available for CIDRA Server.
 
 CIDRA Server is released under the **MIT License**.
 
+
+
+# CODE OR LOCAL FOLDER STRUCTURE
+
+config.json
