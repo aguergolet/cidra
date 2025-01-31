@@ -1,0 +1,7 @@
+version: '3.8'  # Or later
+
+services:
+  redis:
+    image: redis:latest # Use a specific version if needed (e.g., redis:6.2)
+    ports:
+      - "6379:6379" # Map host port 6379 to container port 6379

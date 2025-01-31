@@ -1,0 +1,45 @@
+./cidra-server/code
+./cidra-server/venv
+.env
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Compiled output
+/cidra-front/dist
+/cidra-front/tmp
+/cidra-front/out-tsc
+/cidra-front/bazel-out
+
+# Node
+/cidra-front/node_modules
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+/cidra-front/.angular/cache
+/cidra-front/.sass-cache/
+/cidra-front/connect.lock
+/cidra-front/coverage
+/cidra-front/libpeerconnection.log
+/cidra-fronttestem.log
+/cidra-front/typings
+
+# System files
+.DS_Store
+Thumbs.db
