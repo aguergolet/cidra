@@ -1,0 +1,20 @@
+{
+    "title" : "Sample codes for CIDRA",
+    "description": "A set of sample codes for CIDRA, how to use and use custom libraries",
+    "tools":  [
+        {
+            "id": "check_internet_connection",
+            "title": "Check if Internet Connection is active",
+            "description": "Access an URL and verify if it responds",
+            "params": [
+                {
+                    "name": "url",
+                    "type" : "string",
+                    "description" : "URL will be accessed to check if internet is online",
+                    "required" : "false",
+                    "default": "http://www.pudim.com"
+                }
+            ]
+        }
+    ]
+}
