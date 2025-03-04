@@ -19,6 +19,40 @@
             "output": {
                 "description": "Returns true if the internet connection is active, otherwise false."
             }
+        },
+        {
+            "id": "get_current_date",
+            "title": "Get Current Date",
+            "description": "Retrieves the current date and time.",
+            "params": [],
+            "output": {
+                "description": "Returns the current date and time in ISO 8601 format."
+            }
+        
+        },
+        {
+            "id": "generate_random_number",
+            "title": "Generate Random Number",
+            "description": "Generates a random number within a specified range.",
+            "params": [
+                {
+                    "name": "min",
+                    "type": "number",
+                    "description": "The minimum value of the random number.",
+                    "required": true
+                },
+                {
+                    "name": "max",
+                    "type": "number",
+                    "description": "The maximum value of the random number.",
+                    "required": true
+                }
+            ],
+            "output": {
+                "description": "Returns a random number between min and max (inclusive)."
+            }
         }
+    
+
     ]
 }
