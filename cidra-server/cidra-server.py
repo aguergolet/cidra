@@ -72,6 +72,21 @@ def get_config():
     except Exception as e:
         logging.error(f"Failed to read config.json: {e}")
         return jsonify({"error": "Failed to load configuration."}), 500
+    
+
+@app.route("/getconfig/<tool_id>", methods=["GET"])
+def get_tool_config(tool_id):
+    """Returns the configuration of a specific tool from config.json."""
+    try:
+        with open(config_path, "r") as f:
+            config_data = json.load(f)
+        for tool in config_data.get("tools", []):
+            if tool["id"] == tool_id:
+                return jsonify(tool), 200
+        return jsonify({"error": "Tool not found."}), 404
+    except Exception as e:
+        logging.error(f"Failed to read config.json: {e}")
+        return jsonify({"error": "Failed to load configuration."}), 500
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)

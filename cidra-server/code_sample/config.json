@@ -10,6 +10,7 @@
             "params": [
                 {
                     "name": "url",
+                    "title": "URL",
                     "type": "string",
                     "description": "The URL to be accessed to check if the internet is online.",
                     "required": false,
@@ -37,12 +38,14 @@
             "params": [
                 {
                     "name": "min",
+                    "title": "Minimum Value",
                     "type": "number",
                     "description": "The minimum value of the random number.",
                     "required": true
                 },
                 {
                     "name": "max",
+                    "title": "Maximum Value",
                     "type": "number",
                     "description": "The maximum value of the random number.",
                     "required": true
