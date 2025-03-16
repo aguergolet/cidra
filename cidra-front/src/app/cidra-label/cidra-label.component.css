@@ -1,0 +1,19 @@
+.cidra-label {
+    border-left: 4px solid #6200ea;
+    padding: 10px 15px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    margin: 10px 0;
+  }
+  
+  .cidra-label h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .cidra-label p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #555;
+  }

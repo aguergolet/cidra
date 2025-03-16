@@ -1,0 +1,25 @@
+<div class="tool-detail-container">
+  <h2>Configuração da Ferramenta {{toolConfig.title}}</h2>
+  <h4> {{toolConfig.description}}</h4>
+</div>
+    <div *ngFor="let param of toolConfig.params">
+      <mat-form-field class="full-width">
+        <mat-label>{{param.title}}</mat-label>
+        <input matInput type="{{param.type}}" [(ngModel)]="param.value">
+       @if (param.value) {
+        <button matSuffix mat-icon-button aria-label="Clear" (click)="param.value=''">
+          <mat-icon>close</mat-icon>
+        </button>
+       }
+      </mat-form-field>
+
+    </div>
+
+
+<div class="error-container" *ngIf="errorMessage">
+  
+  <div  class="error-message">
+    <mat-error>{{ errorMessage }}</mat-error>
+  </div>
+ 
+</div>
