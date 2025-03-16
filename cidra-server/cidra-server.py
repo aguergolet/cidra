@@ -7,9 +7,9 @@ from dotenv import load_dotenv
 from flask_cors import CORS 
 
 load_dotenv()
-
-app = Flask(__name__)
+app = Flask(__name__, )
 CORS(app)
+
 logging.basicConfig(level=logging.INFO)
 
 # Configurations
@@ -20,6 +20,7 @@ redis_port = int(os.getenv("REDIS_PORT", 6379))
 data_timeout = int(os.getenv("DATA_TIMEOUT", 30))
 code_folder = os.getenv("CODE_FOLDER", "code")
 config_path = os.path.join(code_folder, "config.json")
+server_port = os.getenv("SERVER_PORT", 5000)
 
 logging.info(f"Configurations loaded for {company}")
 
@@ -32,6 +33,8 @@ if not os.path.exists(code_folder):
 if not os.path.exists(config_path):
     logging.error(f"Configuration file '{config_path}' is missing. Please ensure it is available.")
     raise FileNotFoundError(f"Configuration file '{config_path}' not found.")
+
+
 
 def get_redis_connection():
     """Establishes and returns a Redis connection."""
@@ -89,4 +92,4 @@ def get_tool_config(tool_id):
         return jsonify({"error": "Failed to load configuration."}), 500
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=server_port)
