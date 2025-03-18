@@ -7,6 +7,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { ConfigService } from '../services/config.service';
 
 interface Tool {
   id: string;
@@ -38,8 +39,9 @@ interface ConfigResponse {
 })
 export class MenuComponent implements OnInit {
   tools: Tool[] = [];
+  config = new ConfigService();
   readonly http = inject(HttpClient);
-  readonly apiUrl = 'http://localhost:5000/config'; 
+  readonly apiUrl = this.config.getApiUrl() + '/config'; 
 
   ngOnInit() {
     this.http.get<ConfigResponse>(this.apiUrl).subscribe(

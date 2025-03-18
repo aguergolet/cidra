@@ -9,6 +9,7 @@ import {Tool } from '../../models/tool.model';
 import { MatIcon } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { ConfigService } from '../../services/config.service';
 @Component({
   selector: 'app-tool-detail',
   standalone: true,
@@ -20,10 +21,11 @@ export class ToolDetailComponent implements OnInit, OnDestroy {
 
   toolId: string = '';
   toolConfig: Tool = new Tool();
+  config = new ConfigService();
   errorMessage: string = ''
   readonly http = inject(HttpClient);
   readonly route = inject(ActivatedRoute);
-  readonly apiUrl = 'http://localhost:5000/getconfig';
+  readonly apiUrl = this.config.getApiUrl() + '/getconfig';
 
   private routeSubscription: any;
 

@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
 import { MenuComponent } from './menu/menu.component';
 import { ConfigResponse } from './models/config-response.model';
+import { ConfigService } from './services/config.service';
 
 
 
@@ -32,8 +33,9 @@ export class AppComponent implements OnInit {
   title = 'Loading...';
   description = '';
   tools: any[] = [];
+  configService = new ConfigService();
   readonly http = inject(HttpClient);
-  readonly apiUrl = 'http://localhost:5000/config'; // ✅ Corrige a URL da API
+  readonly apiUrl = this.configService.getApiUrl() + '/config'; // ✅ Corrige a URL da API
 
   constructor(private router: Router) {
     this.router.events.subscribe(event => console.log('Router Event:', event));
