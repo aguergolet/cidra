@@ -25,14 +25,14 @@ logging.basicConfig(level=logging.INFO)
 
 # Load configurations
 config = load_configurations()
-logging.info(f"Configurations loaded for {config['company']}")
+logging.info(f"Configurations loaded for {config.config_data['company']}")
 
 @app.route("/health", methods=["GET"])
 def health_check():
     """Returns the health status of the application."""
     logging.info("Health check endpoint called.")
     redis_conn = get_redis_connection(config)
-    if redis_conn:
+    if (redis_conn):
         logging.info("Redis connection is healthy.")
         return jsonify({"status": "healthy", "redis": "connected"}), 200
     logging.warning("Redis connection is degraded.")
@@ -99,5 +99,5 @@ def handle_options():
         return response
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=config['server_port'])
+    app.run(host="0.0.0.0", port=config.config_data['server_port'])
 

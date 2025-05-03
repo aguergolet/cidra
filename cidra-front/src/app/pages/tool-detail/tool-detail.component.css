@@ -1,11 +1,27 @@
 .tool-detail-container {
-    padding: 20px;
-  }
-  
-  .config-card {
-    margin-bottom: 15px;
-    padding: 15px;
-    background: #ffcc00;
-    color: #333;
-  }
-  
+  margin-bottom: 20px;
+}
+
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* Espaçamento entre os campos */
+}
+
+.form-field {
+  flex: 1 1 calc(50% - 16px); /* Ocupa metade da largura com espaçamento */
+  min-width: 300px; /* Define uma largura mínima */
+}
+
+.full-width {
+  width: 100%;
+}
+
+.error-container {
+  margin-top: 20px;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}

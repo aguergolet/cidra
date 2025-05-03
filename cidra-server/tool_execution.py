@@ -4,7 +4,7 @@ def execute_tool(tool_id, params, config):
     """Executes a tool based on its ID and parameters."""
     try:
         # Find the tool configuration
-        tool_config = next((tool for tool in config['tools'] if tool['id'] == tool_id), None)
+        tool_config = next((tool for tool in config.config_data['tools'] if tool['id'] == tool_id), None)
         if not tool_config:
             raise Exception(f"Tool with ID {tool_id} not found.")
 

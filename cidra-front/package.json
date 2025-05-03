@@ -23,8 +23,11 @@
     "@angular/platform-server": "^19.1.0",
     "@angular/router": "^19.1.0",
     "@angular/ssr": "^19.1.4",
-    "dotenv": "^16.4.7",
+    "crypto": "^1.0.1",
+    "crypto-browserify": "^3.12.1",
     "express": "^4.18.2",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"

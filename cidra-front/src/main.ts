@@ -18,7 +18,7 @@ bootstrapApplication(AppComponent, {
         { path: '', redirectTo: 'home', pathMatch: 'full' },
         { path: 'home', component: HomeComponent },
         { path: 'tool', component: ToolDetailComponent },
-        { path: 'tool/:id', component: ToolDetailComponent }
+        { path: 'tool/:id', component: ToolDetailComponent, data: { renderMode: 'default' } },
       ],
       withHashLocation(),
       withComponentInputBinding()

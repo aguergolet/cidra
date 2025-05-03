@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as dotenv from 'dotenv';
-import { log } from 'node:console';
+import { environment } from '../../environments/environment';
 
 @Injectable({
     providedIn: 'root'
@@ -10,11 +9,10 @@ export class ConfigService {
     private port: number;
 
     constructor() {
-        dotenv.config( );
-        log(process.cwd());
+        
 
-        this.apiUrl = process.env['API_URL'] || 'http://localhost';
-        this.port = Number(process.env['API_PORT']) || 5000;
+        this.apiUrl = environment.API_URL || 'http://localhost';
+        this.port = environment.API_PORT || 3193;
     }
 
     public getApiUrl(): string {

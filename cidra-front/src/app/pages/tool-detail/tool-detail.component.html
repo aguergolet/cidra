@@ -1,25 +1,29 @@
-<div class="tool-detail-container">
-  <h2>Configuração da Ferramenta {{toolConfig.title}}</h2>
-  <h4> {{toolConfig.description}}</h4>
+<div class="tool-detail-container full-width">
+  <h2>Configuração da Ferramenta {{ toolConfig.title }}</h2>
+  <h4>{{ toolConfig.description }}</h4>
 </div>
-    <div *ngFor="let param of toolConfig.params">
-      <mat-form-field class="full-width">
-        <mat-label>{{param.title}}</mat-label>
-        <input matInput type="{{param.type}}" [(ngModel)]="param.value">
-       @if (param.value) {
-        <button matSuffix mat-icon-button aria-label="Clear" (click)="param.value=''">
-          <mat-icon>close</mat-icon>
-        </button>
-       }
-      </mat-form-field>
 
-    </div>
-
+<div class="form-container">
+  <div *ngFor="let param of toolConfig.params" class="form-field">
+    <mat-form-field class="full-width">
+      <mat-label>{{ param.title }}</mat-label>
+      <mat-hint>{{ param.description }}</mat-hint>
+      <input matInput type="{{ param.type }}" [(ngModel)]="param.value" [required]="param.required" />
+      <button *ngIf="param.value" matSuffix mat-icon-button aria-label="Clear" (click)="param.value=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  <br />
+</div>
+<div class="button-container">
+  <button mat-raised-button color="primary" (click)="sendCommand()">
+    Send Command
+  </button>
+</div>
 
 <div class="error-container" *ngIf="errorMessage">
-  
-  <div  class="error-message">
+  <div class="error-message">
     <mat-error>{{ errorMessage }}</mat-error>
   </div>
- 
 </div>

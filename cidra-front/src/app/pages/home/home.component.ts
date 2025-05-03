@@ -4,6 +4,7 @@ import { RouterModule, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ConfigResponse } from '../../models/config-response.model';
 import { MatCardModule } from '@angular/material/card';
+import { ConfigService } from '../../services/config.service';
 
 
 @Component({
@@ -14,10 +15,12 @@ import { MatCardModule } from '@angular/material/card';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  configService = new ConfigService();
+  
   title = 'Loading...';
   description = '';
   readonly http = inject(HttpClient);
-  readonly apiUrl = 'http://localhost:5000/config'; // ✅ Corrige a URL da API
+  readonly apiUrl = this.configService.getApiUrl() + '/config'; // ✅ Corrige a URL da API
 
   constructor(private readonly router: Router) {
     this.router.events.subscribe(event => console.log('Router Event:', event));

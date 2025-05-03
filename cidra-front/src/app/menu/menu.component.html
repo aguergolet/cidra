@@ -1,18 +1,25 @@
-<mat-sidenav-container class="container">
-    <mat-sidenav mode="side" opened class="sidenav">
-      <mat-toolbar class="sidenav-toolbar">
-        <img src="/assets/cidra-logo.png" alt="CIDRA Logo" class="logo">
-        <span class="cidra-title">CIDRA</span>
-      </mat-toolbar>
-      <mat-nav-list>
-        <a mat-list-item *ngFor="let tool of tools" [routerLink]="['/', 'tool', tool.id]" class="nav-item">
-         {{ tool.title }}
-        </a>
-      </mat-nav-list>
-    </mat-sidenav>
-  
-    <mat-sidenav-content class="content-area">
-      <router-outlet></router-outlet>
-    </mat-sidenav-content>
-  </mat-sidenav-container> 
+<mat-sidenav-container class="container" style="height: 100vh;">
+  <mat-sidenav mode="side" opened class="sidenav" style="width: 250px; position: fixed;">
+    <mat-toolbar class="sidenav-toolbar">
+      <img src="/assets/cidra-logo.png" alt="CIDRA Logo" class="logo">
+      <span class="cidra-title">CIDRA</span>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item *ngFor="let tool of tools" [routerLink]="['/', 'tool', tool.id]" class="nav-item">
+        <mat-icon>build</mat-icon>
+        <span>{{ tool.title }}</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="content-area" style="margin-left: 250px;">
+    <mat-toolbar class="top-toolbar">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Admin Settings</span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 
